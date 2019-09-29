@@ -39,9 +39,9 @@ typedef struct{
 
 static const stUnicodeTable_t s_tUniCodeTableJP[]={
 	{0x0020u, 0x007Eu},
-	{0x0080u, 0x00ffu}, // C1 Controls and Latin-1 Supplement
-	{0x0370u, 0x03FFu}, // Greek and Coptic
-	{0x0400u, 0x04FFu}, // Cyrillic
+	//{0x0080u, 0x00ffu}, // C1 Controls and Latin-1 Supplement
+	//{0x0370u, 0x03FFu}, // Greek and Coptic
+	//{0x0400u, 0x04FFu}, // Cyrillic
 	{0x2000u, 0x206Fu}, // General Punctuation
 	{0x2100u, 0x214Fu}, // Letterlike Symbols
 	{0x2150u, 0x218Fu}, // Number Forms
@@ -61,7 +61,8 @@ static const stUnicodeTable_t s_tUniCodeTableJP[]={
 int main(int argc, char *argv[]){
 	for(uint32_t i=0;i<(sizeof(s_tUniCodeTableJP)/sizeof(s_tUniCodeTableJP[0]));i++){
 		for(uint32_t j=s_tUniCodeTableJP[i].u32UniCodeBegin;j<=s_tUniCodeTableJP[i].u32UniCodeEnd;j++){
-			printf("&#%lu;", j);
+//			printf("&#%lu;", j);
+			printf("%lu,", j);
 		}
 	}
 	printf("\n");
